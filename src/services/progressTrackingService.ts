@@ -607,7 +607,7 @@ Remember, every expert was once a beginner. You're doing great! 💪`;
         .eq('user_id', userId)
         .eq('chapter_id', chapterId)
         .eq('topic', topic)
-        .single();
+        .maybeSingle();
 
       if (error && error.code !== 'PGRST116') throw error;
       return data;
